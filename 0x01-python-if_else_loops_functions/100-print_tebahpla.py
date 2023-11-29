@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 ''' authur abdellah'''
-for i in range(ord('z'), ord('A') - 1, -1):
-    value = chr(i)
-
-    if (i - ord('z')) % 2 == 0:
-        value = value.lower()
-    else:
-        value = value.upper()
-    print(value, end="")
+value = 0
+for i in range(ord('z'), ord('a') - 1, -1):
+    print("{}".format(chr(i - value)), end="")
+    value = 32 if i == 0 else 0
