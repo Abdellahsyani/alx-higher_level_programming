@@ -5,4 +5,5 @@ def new_in_list(my_list, idx, element):
     else:
         if my_list:
             my_list.copy()
-            print("{}".format(my_list))
+            my_list[idx] = element
+            print("{:d}".format(my_list[idx]))
