@@ -18,12 +18,13 @@ int is_palindrome(listint_t **head)
 	while (fast != NULL && fast->next != NULL)
 	{
 		fast = fast->next->next;
-		slow = slow->next;
+		next = slow->next;
 		slow->next = prev;
 		prev = slow;
-		if (fast->next != NULL && fast->next->next == NULL)
+		slow = next;
+		if (fast != NULL)
 		{
-			fast = prev;
+			slow = slow->next;
 		}
 	}
 	while (prev != NULL && slow != NULL)
