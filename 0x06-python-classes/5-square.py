@@ -1,8 +1,14 @@
 #!/usr/bin/python3
 
+"""Define a square class"""
+
 
 class Square:
     def __init__(self, size=0):
+        """initialize the init function
+        Args:
+            self (int): the self or head or some thing like this
+        """
         self.size = size
 
     @property
