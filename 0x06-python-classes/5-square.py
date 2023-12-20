@@ -18,8 +18,8 @@ class Square:
         return (self.__size)
 
     @size.setter
-    """The setter function to set the value"""
     def size(self, value):
+        """The setter function to set the value"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -27,13 +27,11 @@ class Square:
         self.__size = value
 
     def area(self):
-        """The area funtion to return the size"""
         return (self.__size * self.__size)
 
     def my_print(self):
         """return the multiplacation size"""
         for i in range(0, self.__size):
-            [print("#", end="") for j in range(self.__size)]
-            print("")
+            print("#" * self.__size)
         if self.__size == 0:
             print("")
