@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-"""The funtion to dived the number"""
 
 
 def list_division(my_list_1, my_list_2, list_length):
-    """divided two lists"""
+    """divided two lists element by element
+    Args:
+        my_list_1 (list): the first list.
+        my_list_2 (list): the seond list.
+        list_length (int): the length of list 1 and list 2
+        """
     new_list = []
     for i in range(0, list_length):
         try:
