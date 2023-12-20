@@ -11,7 +11,7 @@ class Square:
         Args:
         @sefl.__size: the size of class
         """
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
