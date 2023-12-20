@@ -16,7 +16,7 @@ class Square:
     @property
     def size(self):
         """The property function"""
-        return (sefl.__size)
+        return (self.__size)
 
     @size.setter
     def size(self, value):
