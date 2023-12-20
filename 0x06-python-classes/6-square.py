@@ -5,6 +5,7 @@
 
 class Square:
     """Represent the Square function"""
+
     def __init__(self, size=0, position=(0, 0)):
         """initiliaze the new attrbuite
         Args:
@@ -29,15 +30,19 @@ class Square:
         self.__size = value
 
     def position(self, value):
-        if len(position) != 2:
+        if (not isinstance(value, tuple) or len(position) != 2
+                or not all(isinstance(num, int) for num in value)
+                or not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
-        return (self.__size)
+        return (self.__size * self.__size)
 
     def my_print(self):
         if self.__size == 0:
             print("")
+            return
         for i in range(self.__position[1]):
             print("")
         for j in range(self.__size):
