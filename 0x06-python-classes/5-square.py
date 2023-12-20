@@ -4,6 +4,7 @@
 
 
 class Square:
+    """Represent a square"""
     def __init__(self, size=0):
         """initialize the init function
         Args:
@@ -31,7 +32,7 @@ class Square:
 
     def my_print(self):
         """return the multiplacation size"""
-        if self.__size == 0:
-            print()
-        for i in range(self.__size):
+        for i in range(0, self.__size):
             print("#" * self.__size)
+        if self.__size == 0:
+            print("")
