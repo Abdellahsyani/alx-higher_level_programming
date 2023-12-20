@@ -15,14 +15,11 @@ class Square:
 
     @property
     def size(self):
-        """The property function
-        return the size
-    """
+        """The property function"""
         return (sefl.__size)
 
     @size.setter
     def size(self, value):
-        """the setter function to set value"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
