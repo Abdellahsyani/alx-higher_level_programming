@@ -1,0 +1,13 @@
+How to use 2-matrix_divided.py=
+===============================
+
+This module is Divided all elments inside the matrix ``def matrix_divided(matrix, div)``.
+
+Usage
+=====
+
+``matrix_divided(...)`` define a matrix to divide all element by div number and return a new matrix who contains division
+
+::
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix_divided(
