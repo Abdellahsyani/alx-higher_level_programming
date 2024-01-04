@@ -14,8 +14,8 @@ class Rectangle:
         self.height = height
 
     @property
-    '''Get and set of rectangle'''
     def width(self):
+        '''Get and set of rectangle'''
         return (self.__width)
 
     @width.setter
@@ -27,8 +27,8 @@ class Rectangle:
         self.__width = value
 
     @property
-    '''Get and set of rectangle'''
     def height(self):
+        '''Get and set of rectangle'''
         return (self.__height)
 
     @height.setter
