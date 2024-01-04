@@ -59,7 +59,3 @@ class Rectangle:
         row = '#' * self.width + '\n'
         col = row * self.height
         return col(:-1)
-
-    def __repr__(self):
-        '''Return the string representation of raectangle'''
-        return f"Rectangle({self.width}, {self.height})"
