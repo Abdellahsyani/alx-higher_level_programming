@@ -6,11 +6,17 @@ class Rectangle:
     '''The Rectangle class defined'''
 
     def __init__(self, width=0, height=0):
+        '''initialize a new Rectangle
+        Args:
+            width(int): The width of rectangle
+            height(int): the height of new rectangle
+        '''
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
+        '''Get and set the width of rectangle'''
         return (self.__width)
 
     @width.setter
@@ -23,6 +29,7 @@ class Rectangle:
 
     @property
     def height(self):
+        '''Get and set the height of rectangle'''
         return (self.__height)
 
     @height.setter
@@ -34,25 +41,30 @@ class Rectangle:
         self.__height = value
 
     def area(self):
+        '''Return the area of reactangle'''
         return self.__width * self.__height
 
     def perimeter(self):
-        if self.__width or self.__height == 0:
+        '''Return the perimeter of rectangle'''
+        if self.__width == 0 or self.__height == 0:
             return (0)
         else:
             return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        if self.__width or self.__height == 0:
+        '''Return the printable representation with character #'''
+        if self.__width == 0 or self.__height == 0:
             return ("")
+
         rectangle = []
         for i in range(self.__height):
             [rectangle.append('#') for j in range(self.__width)]
             if i != self.__height - 1:
-                rectangle.append('\n')
+                rectangle.append("\n")
         return ("".join(rectangle))
 
     def __repr__(self):
+        '''Return the string representation of raectangle'''
         rectangle = "Rectangle(" + str(self.__width)
         rectangle += ", " + str(self.__height) + ")"
         return (rectangle)
