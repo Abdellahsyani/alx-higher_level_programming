@@ -55,7 +55,15 @@ class Rectangle:
         '''Return the printable representation with character #'''
         if self.__width == 0 or self.__height == 0:
             return ("")
+        rectangle = []
+        for i in range(self.__height):
+            [(rectangle.append('#')) for j in range(self.__width)]:
+                if i != self.__height - 1:
+                    rectangle.append('\n')
+            return ("".join(rectangle))
 
-        row = '#' * self.width + '\n'
-        col = row * self.height
-        return col(:-1)
+    def __repr__(self):
+        '''Return the representation of rectangle'''
+        rectangle = "Rectangle(" + str(self.width) + ")"
+        rectangle += ", " + str(self.height) + ")"
+        return (rectangle)
