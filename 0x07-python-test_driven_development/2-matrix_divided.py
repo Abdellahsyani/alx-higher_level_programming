@@ -29,10 +29,3 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
-
-matrix = [
-        [7.5, -2.4, 9],
-        [-4, 23, 10]
-        ]
-print(matrix_divided(matrix, 3))
-print(matrix)
