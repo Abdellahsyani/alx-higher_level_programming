@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-'''Defines an integere function'''
+'''define
+Defines an integere function'''
 
 
 def add_integer(a, b=98):
