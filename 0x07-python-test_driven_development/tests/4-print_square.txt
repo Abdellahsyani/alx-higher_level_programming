@@ -1,0 +1,80 @@
+How to use 4-print_square.py
+===========================
+
+This module print the size square area with character #.
+
+Usage
+=====
+
+```print_square(...)``` return the square area of size try the integer nember.
+
+::
+
+	>>> print_square = __import__('4-print_square.py').print_square
+	>>> print_sqaure(3)
+	###
+	###
+	###
+
+
+The fucntion also handle one size
+
+::
+
+	>>> print_square(1)
+	#
+
+
+The function with larger size.
+
+::
+
+	>>> print_square(6)
+	######
+	######
+	######
+	######
+	######
+	######
+
+
+The function with size 0
+
+::
+	>>> print_square(0)
+	''
+
+
+The function with negative size
+
+::
+
+	>>> print_square(-3)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+
+The function with foating size
+
+::
+
+	>>> print_square(3.6)
+	Traceback (most recent call last):
+	TypeError: size must be an integer  
+
+
+The function with non-numeric size
+
+::
+
+	>>> print_square('abd')
+	Traceback (most recent call last):
+        TypeError: size must be an integer
+
+The function with tuple or list
+
+::
+
+	>>> print_square([2,2])
+        Traceback (most recent call last):
+        TypeError: size must be an integer
