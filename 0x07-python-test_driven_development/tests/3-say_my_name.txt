@@ -1,0 +1,78 @@
+How to Use 3-say_my_name.py
+---------------------------
+
+This module define a fuucntion to print fist name and last name.
+
+Usage
+-----
+
+```say_my_name(...)``` return the last name and first of a normal person with normal character
+
+::
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("abdo", "syani")
+
+	My name is abdo syani
+
+
+The function with last name only
+
+::
+
+	>>> say_my_name("syani")
+	My name is syani 
+
+
+Function with the empty first name.
+
+::
+
+	>>> say_my_name("", "syani")
+	My name is  abdo
+
+
+The Function with both empty names
+
+::
+
+	>>> say_my_name("", "")
+	My name is
+
+
+The function with Numbers or Special Characters in Names
+
+::
+
+	>>> say_my_name("123", "#@$")
+	My name is 123 #@$
+
+
+The function with mix data type
+
+::
+
+	>>> say_my_name("abdo", "123")
+	My name is abdo 123
+
+The function with long name
+
+::
+
+	>>> say_my_name("abdellahsyani", "johnsmith")
+	My name is abdellahsyani johnsmith
+
+The function with Empty First Name (Default Last Name)
+
+::
+
+	>>> say_my_name(first_name="abdo")
+	My name is abdo
+
+The function Empty Last Name (Default First Name)
+
+::
+
+	>>> say_my_name(last_name="abdo")
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
