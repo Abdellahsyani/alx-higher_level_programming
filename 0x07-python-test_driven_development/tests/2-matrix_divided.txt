@@ -15,7 +15,7 @@ integer numbers
 		[1,2,3],
 		[4,5,6]
 		]
-	>>> matrix_divided(matrix, div)
+	>>> matrix_divided(matrix, 3)
 
 	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
@@ -33,7 +33,7 @@ The function work with floating numbers.
                 [1.3,2.5,3.0],
                 [4.2,5,6.6]
                 ]
-	>>> matrix_divided(matrix, div)
+	>>> matrix_divided(matrix, 3)
 	
 	[[0.43, 0.83, 1.0], [1.4, 1.67, 2.2]]
 ::
@@ -41,7 +41,7 @@ The function work with floating numbers.
                 [-1.3,-2.5,-3.0],
                 [-4.2,-5,-6.6]
                 ]
-	>>> matrix_divided(matrix, div)
+	>>> matrix_divided(matrix, 3)
 	
 	[[-0.43, -0.83, -1.0], [-1.4, -1.67, -2.2]]
 
@@ -53,7 +53,7 @@ The matrix with larger value
                 [1000,2000,3000],
                 [4000,5000,6000]
                 ]
-	>>> matrix_divided(matrix, div)
+	>>> matrix_divided(matrix, 3)
 
 	[[333.33, 666.67, 1000.0], [1333.33, 1666.67, 2000.0]]
 
@@ -64,7 +64,7 @@ Matrix with a Single Element
         >>> matrix = [
                 [23]
                 ]
-        >>> matrix_divided(matrix, div)
+        >>> matrix_divided(matrix, 3)
 
 	[[7.67]]
 
@@ -77,7 +77,7 @@ The matrix with empty list
 ::
 
 	>>> matrix = []
-	>>> matrix_divide(matrix, div)
+	>>> matrix_divide(matrix, 3)
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
@@ -89,7 +89,7 @@ Matrix with different Dimensions
 		[1, 2, 3],
 		[4, 5]
 		]
-	>>> matrix_divided(matrix, div)
+	>>> matrix_divided(matrix, 3)
 	Traceback (most recent call last):
 	TypeError: Each row of the matrix must have the same size
 
@@ -101,7 +101,7 @@ Matrix with mixed Data Types
     		[1, 'two', 3],
    	 	[4, 5, 6]
 		]
-	>>> matrix_divide(matrix, div)
+	>>> matrix_divide(matrix, 3)
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
@@ -114,7 +114,7 @@ Matrix with emty Row's
                 [],
                 [4, 5, 6]
                 ]
-	>>> matrix_divided(matrix, div)
+	>>> matrix_divided(matrix, 3)
 	Traceback (most recent call last):
 	TypeError: Each row of the matrix must have the same size
 
@@ -127,7 +127,7 @@ Matrix with Special Characters or Symbols
     		['!', '@', '#'],
     		['$', '%', '^']
 		]
-	>>> matrix_divided(matrix, div)
+	>>> matrix_divided(matrix, 3)
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
@@ -140,6 +140,6 @@ Matrix with Nested Lists
     		[1, [2, 3], 4],
     		[5, [6, 7], 8]
 		]
-	>>> matrix_divided(matrix, div)
+	>>> matrix_divided(matrix, 3)
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
