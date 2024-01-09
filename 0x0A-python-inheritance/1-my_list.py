@@ -6,7 +6,7 @@ class MyList(list):
     '''start a class'''
     def __init__(self):
         '''the init method'''
-        supper().__init__()
+        super().__init__()
 
     def print_sorted(self):
         '''sorted function'''
