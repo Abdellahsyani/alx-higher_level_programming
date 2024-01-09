@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-'''Define a class that do something'''
+'''contains the MyList class
+'''
 
 
 class MyList(list):
-    '''start a class'''
+    '''a subclass of list'''
     def __init__(self):
-        '''the init method'''
+        '''initializes the object'''
         super().__init__()
 
     def print_sorted(self):
-        '''sorted function'''
+        '''prints the sorted list'''
         print(sorted(self))
