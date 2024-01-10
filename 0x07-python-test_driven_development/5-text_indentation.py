@@ -1,19 +1,29 @@
 #!/usr/bin/python3
-"""Genius tools for printing squares."""
+'''define a fucntion to print new line'''
 
 
-def print_square(size):
+def text_indentation(text):
+    """Print text with two new lines after each '.', '?', and ':'.
+
+        Args:
+            text (string): The text to print.
+        Raises:
+            TypeError: If text is not a string.
     """
-    Print a square using the character '#'.
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
 
-    Args
-    ----
-    size: int, non negative number
-        The lenght of the square
-    """
-    if type(size) is not int:
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
-    row = '#' * size + '\n'
-    print(row * size, end='')
+    c = 0
+    while c < len(text) and text[c] == ' ':
+        c += 1
+
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
+                print("\n")
+            c += 1
+            while c < len(text) and text[c] == ' ':
+                c += 1
+            continue
+        c += 1
