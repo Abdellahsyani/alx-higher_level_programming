@@ -1,14 +1,9 @@
 #!/usr/bin/python3
-'''contains the MyList class
-'''
+"""Module of the advanced list object."""
 
 
 class MyList(list):
-    '''a subclass of list'''
-    def __init__(self):
-        '''initializes the object'''
-        super().__init__()
-
+    """Make a new advanced list object."""
     def print_sorted(self):
-        '''prints the sorted list'''
+        """Print the list in ascending sort."""
         print(sorted(self))
