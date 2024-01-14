@@ -69,3 +69,20 @@ class Rectangle(Base):
     def area(self):
         """return the square area of rectangle"""
         return self.__width * self.__height
+
+    def display(self):
+        """print the square area with # character"""
+        for i in range(self.height):
+            print("#" * self.width)
+
+    def __str__(self):
+        """return the str"""
+        rect = "[Rectangle] " + "(" + str(self.id) + ") " + str(self.x)
+        rect += "/" + str(self.y) + " - " + str(self.width) + "/" + str(self.height)
+        return rect
+
+r1 = Rectangle(4, 6, 2, 1, 12)
+print(r1)
+
+r2 = Rectangle(5, 5, 1)
+print(r2)
