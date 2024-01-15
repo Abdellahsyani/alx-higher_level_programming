@@ -23,9 +23,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """the __str__ methods"""
-        seq = "[Square] " + "(" + self.id + ") " + self.x
-        seq += "/" + self.y + " - " + self.width
-        return seq
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     def update(self, *args, **kwargs):
         """get args and kwargs from these"""
@@ -40,28 +38,3 @@ class Square(Rectangle):
                 self.y = args[3]
         for key, value in kwargs.items():
             setattr(self, key, value)
-
-
-s1 = Square(5)
-print(s1)
-
-s1.update(10)
-print(s1)
-
-s1.update(1, 2)
-print(s1)
-
-s1.update(1, 2, 3)
-print(s1)
-
-s1.update(1, 2, 3, 4)
-print(s1)
-
-s1.update(x=12)
-print(s1)
-
-s1.update(size=7, y=1)
-print(s1)
-
-s1.update(size=7, id=89, y=1)
-print(s1)
