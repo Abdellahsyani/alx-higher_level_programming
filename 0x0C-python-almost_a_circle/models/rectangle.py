@@ -78,8 +78,8 @@ class Rectangle(base.Base):
 
     def __str__(self):
         """return the str"""
-        rect = "[Rectangle] " + "(" + str(self.id) + ") " + str(self.x)
-        rect += "/" + str(self.y) + " - " + str(self.width) + "/" + str(self.height)
+        rect = "[Rectangle] " + "(" + str(self.id) + ") " + str(self.x) + "/"
+        rect += str(self.y) + " - " + str(self.width) + "/" + str(self.height)
         return rect
 
     def update(self, *args, **kwargs):
