@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Define a Rectangle class"""
-from base import Base
+from models import base
 
 
-class Rectangle(Base):
+class Rectangle(base.Base):
     """starting the Rectangle class with Base inherts"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -32,7 +32,7 @@ class Rectangle(Base):
         """Get and setter class"""
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -72,8 +72,9 @@ class Rectangle(Base):
 
     def display(self):
         """print the square area with # character"""
-        for i in range(self.height):
-            print("#" * self.width)
+        row = self.x * " " + self.width * "#" + "\n"
+        colum = row * self.height
+        print(self.y * "\n" + colum, end="")
 
     def __str__(self):
         """return the str"""
@@ -81,8 +82,18 @@ class Rectangle(Base):
         rect += "/" + str(self.y) + " - " + str(self.width) + "/" + str(self.height)
         return rect
 
-r1 = Rectangle(4, 6, 2, 1, 12)
-print(r1)
-
-r2 = Rectangle(5, 5, 1)
-print(r2)
+    def update(self, *args, **kwargs):
+        """Update rectangle class"""
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        for key, value in kwargs.items():
+            setattr(self, key, value)
