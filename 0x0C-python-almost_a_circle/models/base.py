@@ -75,18 +75,18 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """The class methods that serializes and deserializes in CSV"""
-        filename = f"{cls.__name__}.csv"
-        with open(filename, 'w', newline="") as file_csv:
-            if list_objs in None or list_objs == []:
-                file_csv.write("[]")
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
-                    update_name = ["id", "width", "height", "x", "y"]
+                    fieldnames = ["id", "width", "height", "x", "y"]
                 else:
-                    update_name = ["id", "size", "x", "y"]
-                writer = csv.DictWriter(file_csv, update_name=update_name)
-                for i in list_objs:
-                    writer.writerow(i.to_dictionary())
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
 
     @classmethods
     def load_from_file_csv(cls):
