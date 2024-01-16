@@ -97,3 +97,8 @@ class Rectangle(base.Base):
                 self.y = args[4]
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def to_dictionary(self):
+        """set values to be a dicyionary"""
+        return {'x': self.x, 'y': self.y, 'id': self.id \
+                'height': self.height, 'width': self.width}
