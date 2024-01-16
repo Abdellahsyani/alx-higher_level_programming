@@ -21,8 +21,7 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """method fromat to sharing data representation"""
-        dic = json.dumps(list_dictionaries)
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
-            return dic
+            return json.dumps(list_dictionaries)
