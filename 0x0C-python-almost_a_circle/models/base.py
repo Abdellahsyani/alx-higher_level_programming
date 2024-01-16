@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """Define a base class"""
+import json
+import os
+import csv
 
 
 class Base:
@@ -15,3 +18,11 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """method fromat to sharing data representation"""
+        dic = json.dumps(list_dictionaries)
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        else:
+            return dic
