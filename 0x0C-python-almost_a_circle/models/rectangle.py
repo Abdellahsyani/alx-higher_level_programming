@@ -100,5 +100,7 @@ class Rectangle(base.Base):
 
     def to_dictionary(self):
         """set values to be a dicyionary"""
-        return {'x': self.x, 'y': self.y, 'id': self.id \
-                'height': self.height, 'width': self.width}
+        dic = {'id': self.id, 'width': self.width, 'height': self.height}
+        dic['x'] = self.x
+        dic['y'] = self.y
+        return dic
