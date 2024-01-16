@@ -40,7 +40,8 @@ class Base:
             else:
                 dic = [x.to_dictionary() for x in list_objs]
                 f.write(Base.to_json_string(dic))
-
+    
+    @staticmethod
     def from_json_string(json_string):
         """the static method that returns the list of JSON string"""
         if json_string is None or json_string == []:
