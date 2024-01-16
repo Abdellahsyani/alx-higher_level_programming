@@ -45,4 +45,4 @@ class Base:
         """the static method that returns the list of JSON string"""
         if json_string is None or json_string == []:
             return "[]"
-        return json.dumps(json_string)
+        return json.loads(json_string)
