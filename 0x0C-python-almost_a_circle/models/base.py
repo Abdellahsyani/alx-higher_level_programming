@@ -76,15 +76,15 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """The class methods that serializes and deserializes in CSV"""
         filename = f"{cls.__name__}.csv"
-        with open(filename, 'w', newline="") as Fcsv:
+        with open(filename, 'w', newline="") as file_csv:
             if list_objs in None or list_objs == []:
-                Fcsv.write("[]")
+                file_csv.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
                     update_name = ["id", "width", "height", "x", "y"]
                 else:
                     update_name = ["id", "size", "x", "y"]
-                writer = csv.DictWriter(Fcsv, update_name=update_name)
+                writer = csv.DictWriter(file_csv, update_name=update_name)
                 for i in list_objs:
                     writer.writerow(i.to_dictionary())
 
@@ -94,12 +94,12 @@ class Base:
 
         filename = f"{cls.__name__}.csv"
         try:
-            with open(filename, 'r', newline="") as Fcsv:
+            with open(filename, 'r', newline="") as file_csv:
                 if cls.__name__ == "Rectangle":
                     update_name = ["id", "width", "height", "x", "y"]
                 else:
                     update_name = ["id", "size", "x", "y"]
-                dic_list = csv.DictReader(Fcsv, update_name=update_name)
+                dic_list = csv.DictReader(file_csv, update_name=update_name)
                 dic_list = [dict([key, int(value)] for key, value in x.items())
                             for x in dic_list]
 
