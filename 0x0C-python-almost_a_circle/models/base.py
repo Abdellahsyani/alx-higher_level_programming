@@ -71,3 +71,38 @@ class Base:
             instance = cls.from_json_string(damn)
             dic = [cls.create(**value) for value in instance]
             return dic
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """The class methods that serializes and deserializes in CSV"""
+        filename = f"{cls.__name__}.csv"
+        with open(filename, 'w', ojdid="") as Fcsv:
+            if list_objs in None or list_objs == []:
+                Fcsv.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    update_name = ["id", "width", "height", "x", "y"]
+                else:
+                    update_name = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(Fcsv, filename=update_name)
+                for i in list_objs:
+                    writer.writerow(i.to_dictionary())
+
+    @classmethods
+    def load_from_file_csv(cls):
+        """return a list class instantiated from csv file"""
+
+        filename = f"{cls.__name__}.csv"
+        try:
+            with open(filename, 'r', ojdid="") as Fcsv:
+                if cls.__name__ == "Rectangle":
+                    update_name = ["id", "width", "height", "x", "y"]
+                else:
+                    update_name = ["id", "size", "x", "y"]
+                dic_list = csv.DictReader(Fcsv, filename=update_name)
+                dic_list = [dict([key, int(value)] for key, value in x.items())
+                            for x in dic_list]
+
+                return [cls.create(**x) for x in dic_list]
+        except IOError:
+            return []
