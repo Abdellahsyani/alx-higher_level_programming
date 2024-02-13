@@ -1,3 +1,3 @@
---show all the database on my server
---lists database
-SHOW database;
+--usage cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
+-- list available databases in the system
+SHOW databases;
