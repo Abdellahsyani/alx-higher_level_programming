@@ -1,3 +1,3 @@
 -- 0-list_databases.sql | mysql -hlocalhost -uroot -p
 -- deletes the databases
-DROP IF EXISTS hbtn_0c_0;
+DROP database IF EXISTS hbtn_0c_0;
