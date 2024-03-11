@@ -1,14 +1,13 @@
 #!/usr/bin/node
 /* addition two number */
 
-function add (argv, a, b) {
-  a = parseFloat(argv[2]);
-  b = parseFloat(argv[3]);
+function add (a, b) {
   if (isNaN(a) || isNaN(b)) {
     console.log('NAN');
   } else {
-    const sum = a + b;
+    const sum = parseInt(a) + parseInt(b);
     console.log(sum);
   }
 }
-add(process.argv);
+const [, , firstArg, secondArg] = process.argv;
+add(firstArg, secondArg);
