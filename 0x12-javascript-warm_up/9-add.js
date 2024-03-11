@@ -2,12 +2,7 @@
 /* addition two number */
 
 function add (a, b) {
-  if (isNaN(a) || isNaN(b)) {
-    console.log('NAN');
-  } else {
-    const sum = parseInt(a) + parseInt(b);
-    console.log(sum);
-  }
+  return Number(a) + Number(b);
 }
-const [, , firstArg, secondArg] = process.argv;
-add(firstArg, secondArg);
+
+console.log(add(process.argv[2], process.argv[3]));
