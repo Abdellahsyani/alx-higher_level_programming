@@ -1,4 +1,4 @@
-#!/sur/bin/node
+#!/usr/bin/node
 
 exports.esrever = function (list, searchElement) {
   return list.reduceRight((final, item) => {
