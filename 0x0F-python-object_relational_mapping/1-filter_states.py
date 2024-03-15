@@ -9,10 +9,10 @@ conn = MySQLdb.connect(
 cur = conn.cursor()
 cur.execute("SELECT * FROM states hbtn_0e_0_usa
         WHERE UPPER(name) LIKE N%
-        BY states.id ASC")
+        ORDER BY id ASC")
 query = cur.fetchall()
 for row in query:
-    print(query)
+    print(row)
 
-conn.close()
 cur.close()
+conn.close()
