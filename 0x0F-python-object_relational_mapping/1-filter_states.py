@@ -11,7 +11,7 @@ if __name__=="__main__":
             )
     cur = conn.cursor()
     cur.execute("SELECT * FROM states\
-            WHERE name LIKE N%\
+            WHERE name BINARYLIKE N%\
             ORDER BY id ASC")
     query = cur.fetchall()
     for row in query:
