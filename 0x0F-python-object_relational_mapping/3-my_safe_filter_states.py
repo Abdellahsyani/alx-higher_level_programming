@@ -10,8 +10,8 @@ if __name__=="__main__":
             user=argv[1], passwd=argv[2], db=argv[3])
     cur = conn.cursor()
     cur.execute("SELECT * FROM states\
-            WHERE name LIKE BINARY %s\
-            ORDER BY id ASC", (state,))
+            WHERE name LIKE BINARY '{}'\
+            ORDER BY id ASC".format(state))
     query = cur.fetchall()
     for row in query:
         print(row)
