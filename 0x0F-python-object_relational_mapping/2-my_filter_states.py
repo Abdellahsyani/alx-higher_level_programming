@@ -11,8 +11,8 @@ if __name__ == "__main__":
     cur = conn.cursor()
     state = argv[4]
     cur.execute("""SELECT * FROM states
-            WHERE name == %s
-            ORDER BY id ASC""", (state,))
+            WHERE name LIKE BINARY {}
+            ORDER BY id ASC""".format(state))
     query = cur.fetchall()
     for row in query:
         print(row)
