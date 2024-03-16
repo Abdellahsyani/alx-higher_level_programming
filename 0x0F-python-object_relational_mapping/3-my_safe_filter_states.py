@@ -5,12 +5,12 @@ import MySQLdb
 from sys import argv
 
 if __name__=="__main__":
-    username, password, database = argv[1:]
+    state = argv[4].split(';')[0]
     conn = MySQLdb.connect(host="localhost", port=3306, charset="utf8",
-            user="username", passwd="password", db="database")
+            user=argv[1], passwd=argv[2], db=argv[3])
     cur = conn.cursor()
     sql = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
-    cur.execute(sql, ('%' + argv[4] + '%',))
+    cur.execute(sql, ('%' + state + '%',))
     query = cur.fetchall()
     for row in query:
         print(row)
