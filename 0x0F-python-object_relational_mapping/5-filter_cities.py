@@ -17,11 +17,9 @@ if __name__ == "__main__":
     state = argv[4]
     cur.execute(sql, (state,))
     query_state = cur.fetchall()
-    cities = set()
+    cities = []
     for city in query_state:
-        city_name = city[0]
-        if city_name not in cities:
-            print(city_name)
-            cities.add(city_name)
+            cities.append(city[0])
+    print(", ".join(cities))
     cur.close()
     conn.close()
