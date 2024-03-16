@@ -19,7 +19,7 @@ if __name__ == "__main__":
     query_state = cur.fetchall()
     cities = []
     for city in query_state:
-            cities.append(city[0])
+        cities.append(city[0])
     print(", ".join(cities))
     cur.close()
     conn.close()
