@@ -16,8 +16,8 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State)\
-    .filter(State.name.collate('utf8mb4_bin') == argv[4])\
-    .first()
+        .filter(State.name.collate('utf8mb4_bin') == argv[4])\
+        .first()
 
     if query:
         print(query.id)
