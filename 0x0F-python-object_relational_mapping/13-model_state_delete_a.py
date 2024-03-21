@@ -7,15 +7,14 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    engine = create_engine(
-            'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-                argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    db = f"mysql+mysqldb://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}"
+    engine = create_engine(db)
 
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    session.query(State)\
-        .filter(State.name.like('%a%'))\
-        .order_by(State.id).delete()
+    states_to_delete = session.query(State).\
+        filter(State.name.like("%a%")).\
+        delete()
     session.commit()
