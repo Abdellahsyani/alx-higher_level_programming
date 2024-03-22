@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""FETCH
+"""FETCH all
 """
 
 from sys import argv
